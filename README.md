@@ -1,2 +1,2 @@
-#####php-db-basic-commands
+# php-db-basic-commands
 by bash studio
