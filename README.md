@@ -1,1 +1,2 @@
-# php_mysql-commands
+#php-db-basic-commands
+by bash studio
