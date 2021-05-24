@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+<script type="text/javascript" language="javascript">
+//function showdata starts from here
+
+function showData(str){
+    if(str == ""){
+        document.getElementById("theHint").innerHTML="";
+        return;
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+                document.getElementById("theHint").innerHTML = this.responseText;
+        }
+    }
+    xmlhttp.open("GET","ajax1.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+</script>
+<body>
+    <form method="POST" onsubmit="return process(this);">
+        <table align="center">
+            <tr><td>
+                <select name="id" onchange="showData(this.value);">
+                <option value="">Select ID</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                </select>
+        </table>
+
+<div id="theHint"></div>
+
+    </form>
+</body>
+</html>
